@@ -1,0 +1,17 @@
+export default [
+    {
+        name: 'Lion',
+        scientificName: 'Panthero leo',
+        size: '140',
+        diet: ['meat']
+    },
+    {
+        name: 'Gorilla',
+        scientificName: 'Gorilla beringei',
+        size: 205,
+        diet: ['plants', 'insects'],
+        additional: {
+            notes: 'This is the eastern gorilla. There is also a west that is a different species.'
+        }
+    }
+]
