@@ -4,6 +4,7 @@ import Instructions from './Components/Instructions';
 import FunctionCom from './Components/FunctionComp';
 import Data from './Data';
 import AnimalCard from './AnimalCard';
+import AnimalDetails from './Components/AnimalDetails';
 
 function showAdditionalDetails(additional){
   if(additional != null){        // handle error if additional is not defined

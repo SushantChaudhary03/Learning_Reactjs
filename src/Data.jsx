@@ -13,5 +13,11 @@ export default [
         additional: {
             notes: 'This is the eastern gorilla. There is also a west that is a different species.'
         }
+    },
+    {
+        name: 'Zebra',
+        scientificName: 'Equus quagga',
+        size: 322,
+        diet: ['plants'],
     }
 ]
