@@ -4,6 +4,9 @@ import Instructions from './Components/Instructions';
 import FunctionCom from './Components/FunctionComp';
 import Data from './Data';
 import AnimalCard from './AnimalCard';
+import Alert from './Components/Alert';
+import CartSuccess from './Components/CartSuccess';
+import Product from './Components/Product';
 
 function showAdditionalDetails(additional){
   if(additional != null){        // handle error if additional is not defined
@@ -32,6 +35,9 @@ const emojis = [
 
 function App() {
   const ide = "unique";
+  const wrapper = {
+    padding: 20
+  }
   return (
     <>
       <div className='container'>
@@ -73,7 +79,14 @@ function App() {
              showAdditional = {showAdditionalDetails}
              />)}
           </div>
-
+          <div className='alert' style={wrapper}>
+            <Alert title="Items not Added" type="error">
+              {/* {alert("Item are out of stock")} */}
+              <div>Item are out of stock</div>
+            </Alert>
+            <CartSuccess />
+            <Product />
+          </div>
       </div>
     </>
   )
