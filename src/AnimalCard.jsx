@@ -10,34 +10,26 @@ export default function AnimalCard({
     additional,
     scientificName,
     size,
-    showAdditional,
-    ...props
+    showAdditional
 }) {
-    console.log(scientificName)
-    console.log(diet)
     return (
-        <>
-            <div>
-                <Card title="Animal" details={<AnimalDetails
-                    {...props}
-                />}>
-                    <h2>{name}</h2>
-                    <h2>{size}</h2>
-                    <h2>{scientificName}</h2>
-                    <AnimalDetails
-                        diet={diet}
-                        scientificName={props.scientificName}
-                        {...props}
-                    />
-                    <h2>{diet.join(', ')}</h2>
-                    <button id="btn" onClick={() => showAdditional(additional)}>Show more</button>
-                </Card>
-            </div>
-        </>
-    )
+        <div>
+            <Card title="Animal" details={
+                <AnimalDetails
+                    diet={diet}
+                    scientificName={scientificName}
+                />
+            }>
+                <h2>{name}</h2>
+                <h2>{size}</h2>
+                <h2>{scientificName}</h2>
+                <button id="btn" onClick={() => showAdditional(additional)}>Show more</button>
+            </Card>
+        </div>
+    );
 }
 
-AnimalCard.PropTypes = {
+AnimalCard.propTypes = {
     additional: PropTypes.shape({
         link: PropTypes.string,
         notes: PropTypes.string
@@ -47,10 +39,10 @@ AnimalCard.PropTypes = {
     scientificName: PropTypes.string.isRequired,
     showAdditional: PropTypes.func.isRequired,
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-}
+};
 
 AnimalCard.defaultProps = {
     additional: {
         notes: 'No additional information'
     }
-}
+};

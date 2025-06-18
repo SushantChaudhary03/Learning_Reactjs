@@ -12,8 +12,9 @@ function convertFood(food) {
             return '🌱';
     }
 }
-export default function AnimalDetails({diet, scientificName}) {
-    // const{diet, scientificName} = props
+export default function AnimalDetails(props) {
+    const{diet, scientificName} = props
+    console.log(diet)
     return (
         <div className="details">
             <h4>Details:</h4>
@@ -30,4 +31,3 @@ AnimalDetails.propTypes = {
     diet: PropTypes.arrayOf(PropTypes.string).isRequired,
     scientificName: PropTypes.string.isRequired,
 }
-
