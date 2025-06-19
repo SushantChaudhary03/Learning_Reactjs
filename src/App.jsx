@@ -7,6 +7,8 @@ import AnimalCard from './AnimalCard';
 import Alert from './Components/Alert';
 import CartSuccess from './Components/CartSuccess';
 import Product from './Components/Product';
+import ReactState from './Components/ReactState';
+import PracticeUSeState from './Components/PracticeUseState';
 
 function showAdditionalDetails(additional){
   if(additional != null){        // handle error if additional is not defined
@@ -86,6 +88,8 @@ function App() {
             </Alert>
             <CartSuccess />
             <Product />
+            <ReactState />
+            <PracticeUSeState />
           </div>
       </div>
     </>
