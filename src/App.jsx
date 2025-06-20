@@ -9,6 +9,10 @@ import CartSuccess from './Components/CartSuccess';
 import Product from './Components/Product';
 import ReactState from './Components/ReactState';
 import PracticeUSeState from './Components/PracticeUseState';
+import UseReducer from './Components/UseReducer';
+import Todo from './Components/Todo';
+import Navigation from './Components/Custom_Salad_Builder/Navigation';
+import SaladMaker from './Components/Custom_Salad_Builder/SaladMaker'
 
 function showAdditionalDetails(additional){
   if(additional != null){        // handle error if additional is not defined
@@ -90,6 +94,12 @@ function App() {
             <Product />
             <ReactState />
             <PracticeUSeState />
+            <UseReducer />
+            <Todo />
+            <div className='salad-maker'>
+            <Navigation />
+            <SaladMaker />
+            </div>
           </div>
       </div>
     </>

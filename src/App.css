@@ -125,3 +125,41 @@ button{
   justify-content: center;
   align-items: center;
 }
+
+.salad-maker{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  width: 60vw;
+  /* height: 60vh; */
+  margin-top: 20px;
+}
+
+.salad-builder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.salad-items{
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  /* background-color: blue; */
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.salad-items button{
+  font-size: 3rem;
+  background-color: transparent;
+}
