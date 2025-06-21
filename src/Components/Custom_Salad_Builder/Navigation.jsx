@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import UserContext from './User'
 
 const style = {
     display: 'flex',
@@ -7,9 +8,10 @@ const style = {
     marginTop: '5px'
 }
 const Navigation = ()=>{
+    const user = useContext(UserContext);
     return(
         <div style={style}>
-            Welcome
+            Welcome {user.name}
         </div>
     )
 }

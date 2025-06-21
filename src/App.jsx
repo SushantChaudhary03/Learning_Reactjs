@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import Instructions from './Components/Instructions';
 import FunctionCom from './Components/FunctionComp';
@@ -13,11 +13,18 @@ import UseReducer from './Components/UseReducer';
 import Todo from './Components/Todo';
 import Navigation from './Components/Custom_Salad_Builder/Navigation';
 import SaladMaker from './Components/Custom_Salad_Builder/SaladMaker'
+import UserContext from './Components/Custom_Salad_Builder/User';
+import ThemeProvider from './Components/Custom_Salad_Builder/Practice_UseContext/ThemeProvider';
+import UseContext from './Components/Custom_Salad_Builder/Practice_UseContext/UseContext';
+import TextInformation from './Components/TextApp.jsx/TextInformation';
 
-function showAdditionalDetails(additional){
-  if(additional != null){        // handle error if additional is not defined
+export const ThemeContext = React.createContext();
+export const TextContext = createContext();
+
+function showAdditionalDetails(additional) {
+  if (additional != null) {        // handle error if additional is not defined
     const alertInformation = Object.entries(additional)
-    .map(information => `${information[0]}: ${information[1]}`).join('\n');
+      .map(information => `${information[0]}: ${information[1]}`).join('\n');
     alert(alertInformation)
   }
 }
@@ -39,7 +46,14 @@ const emojis = [
   }
 ]
 
+const user = {
+  name: 'Sushant',
+  favorites: ['avocado', 'carrot']
+}
+
 function App() {
+  const [text, setText] = useState('');
+  TextContext.displayName = 'TextContext';
   const ide = "unique";
   const wrapper = {
     padding: 20
@@ -50,57 +64,78 @@ function App() {
         <span id={ide}>hello</span> {/*assign variable and reference an attribute.*/}
 
         {/* Adding events to elements */}
-         <button onClick={displayEmojiId}>
-            <span id="laughing-emoji">
-              😀
-            </span>
-          </button>
+        <button onClick={displayEmojiId}>
+          <span id="laughing-emoji">
+            😀
+          </span>
+        </button>
 
-          <button onClick={displayEmojiId}>
-            <span  id='crying-emoji'>😭</span>
-          </button>
+        <button onClick={displayEmojiId}>
+          <span id='crying-emoji'>😭</span>
+        </button>
 
-          {/* Mapping Over Data to Create Elements */}
-          <div>
-            {name.map(name=> <div key={name}>{name}</div>)}
+        {/* Mapping Over Data to Create Elements */}
+        <div>
+          {name.map(name => <div key={name}>{name}</div>)}
+        </div>
+
+        <div>
+          {emojis.map(emoji => <div key={emoji.name}>{emoji.emoji}</div>)}
+        </div>
+
+        {/* Create custom component in react */}
+        <Instructions />
+        <FunctionCom />
+
+        {/* Building dynamic component with props */}
+        <div className='animal'>
+          {Data.map(Animal => <AnimalCard
+            key={Animal.name}
+            name={Animal.name}
+            size={Animal.size}
+            diet={Animal.diet}
+            additional={Animal.additional}
+            scientificName={Animal.scientificName}
+            showAdditional={showAdditionalDetails}
+          />)}
+        </div>
+        <div className='alert' style={wrapper}>
+          <Alert title="Items not Added" type="error">
+            {/* {alert("Item are out of stock")} */}
+            <div>Item are out of stock</div>
+          </Alert>
+          <CartSuccess />
+          <Product />
+          <ReactState />
+          <PracticeUSeState />
+          <UseReducer />
+          <Todo />
+          <div className='salad-maker'>
+            <UserContext.Provider value={user}>
+              <Navigation />
+              <SaladMaker />
+            </UserContext.Provider>
           </div>
-
-          <div>
-            {emojis.map(emoji=> <div key={emoji.name}>{emoji.emoji}</div>)}
-          </div>
-
-          {/* Create custom component in react */}
-          <Instructions />
-          <FunctionCom />
-
-          {/* Building dynamic component with props */}
-          <div className='animal'>
-            {Data.map(Animal=> <AnimalCard
-             key={Animal.name} 
-             name={Animal.name}
-             size = {Animal.size}
-             diet = {Animal.diet}
-             additional = {Animal.additional}
-             scientificName = {Animal.scientificName}
-             showAdditional = {showAdditionalDetails}
-             />)}
-          </div>
-          <div className='alert' style={wrapper}>
-            <Alert title="Items not Added" type="error">
-              {/* {alert("Item are out of stock")} */}
-              <div>Item are out of stock</div>
-            </Alert>
-            <CartSuccess />
-            <Product />
-            <ReactState />
-            <PracticeUSeState />
-            <UseReducer />
-            <Todo />
-            <div className='salad-maker'>
-            <Navigation />
-            <SaladMaker />
-            </div>
-          </div>
+          <ThemeProvider>
+            <UseContext />
+          </ThemeProvider>
+        </div>
+        <TextContext.Provider value={text}>
+        <div className="wrapper">
+          <label htmlFor="text">
+            Add Your Text Here:
+            <textarea
+              id="text"
+              name="text"
+              rows="10"
+              cols="100"
+              onChange={e=> setText(e.target.value)}
+            >
+            </textarea>
+          </label>
+          <TextInformation />
+        </div>
+        </TextContext.Provider>
       </div>
     </>
   )

@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { SaladContext } from './SaladMaker'
 
 const style = {
     marginLeft: '20px'
 }
 const SaladSummary = () => {
+    const {salad} = useContext(SaladContext);
+    console.log(salad)
     return (
         <div style={style}>
             <h2>Your Salad</h2>
             <ul>
-                <li>Apple</li>
-                <li>Avocado</li>
-                <li>Carrots</li>
-
+               {salad.map(({id, name})=> (<li key={id}>{name}</li>))}
             </ul>
         </div>
     )
