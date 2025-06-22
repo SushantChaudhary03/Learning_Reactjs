@@ -192,3 +192,37 @@ button {
 .wrapper div {
   margin: 20px 0;
 }
+
+.preview{
+  border: 1px solid black;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.information {
+ font-size: .75em !important;
+ color: blue !important;
+ cursor: pointer;
+}
+.wrapper button.information {
+ border: none;
+}
+.information-wrapper {
+ position: relative;
+}
+.popup {
+ position: absolute;
+ background: white;
+ border: 1px darkgray solid;
+ padding: 10px;
+ top: -70px;
+ left: 0;
+}
+
+.form {
+ padding: 5px 20px;
+ width: 30vw;
+}
+.form fieldset {
+ padding: 30px 5px;
+}

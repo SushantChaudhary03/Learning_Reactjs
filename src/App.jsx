@@ -17,6 +17,9 @@ import UserContext from './Components/Custom_Salad_Builder/User';
 import ThemeProvider from './Components/Custom_Salad_Builder/Practice_UseContext/ThemeProvider';
 import UseContext from './Components/Custom_Salad_Builder/Practice_UseContext/UseContext';
 import TextInformation from './Components/TextApp.jsx/TextInformation';
+import FileNamer from './Components/Validating_Components/FileNamer';
+import FetchData from './Components/UseEffectHook.jsx/FetchData';
+import Form from './Components/ReactForm/Form';
 
 export const ThemeContext = React.createContext();
 export const TextContext = createContext();
@@ -136,6 +139,9 @@ function App() {
           <TextInformation />
         </div>
         </TextContext.Provider>
+        <FileNamer />
+        <FetchData />
+        <Form />
       </div>
     </>
   )
