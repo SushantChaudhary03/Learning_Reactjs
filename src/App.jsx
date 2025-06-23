@@ -20,6 +20,7 @@ import TextInformation from './Components/TextApp.jsx/TextInformation';
 import FileNamer from './Components/Validating_Components/FileNamer';
 import FetchData from './Components/UseEffectHook.jsx/FetchData';
 import Form from './Components/ReactForm/Form';
+import DisplayRiver from './Components/Loading_ Asynchronous_Data/DisplayRiver';
 
 export const ThemeContext = React.createContext();
 export const TextContext = createContext();
@@ -142,6 +143,7 @@ function App() {
         <FileNamer />
         <FetchData />
         <Form />
+        <DisplayRiver />
       </div>
     </>
   )

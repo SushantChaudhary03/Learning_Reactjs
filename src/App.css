@@ -226,3 +226,14 @@ button {
 .form fieldset {
  padding: 30px 5px;
 }
+
+.river-information{
+  border: 1px solid black;
+  width: 50vw;
+  height: 50vh;
+  padding: 10px 20px;
+}
+
+/* .river-information button{
+
+} */
