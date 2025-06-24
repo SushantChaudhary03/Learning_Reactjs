@@ -193,47 +193,79 @@ button {
   margin: 20px 0;
 }
 
-.preview{
+.preview {
   border: 1px solid black;
   padding: 10px;
   word-wrap: break-word;
 }
 
 .information {
- font-size: .75em !important;
- color: blue !important;
- cursor: pointer;
+  font-size: .75em !important;
+  color: blue !important;
+  cursor: pointer;
 }
+
 .wrapper button.information {
- border: none;
+  border: none;
 }
+
 .information-wrapper {
- position: relative;
+  position: relative;
 }
+
 .popup {
- position: absolute;
- background: white;
- border: 1px darkgray solid;
- padding: 10px;
- top: -70px;
- left: 0;
+  position: absolute;
+  background: white;
+  border: 1px darkgray solid;
+  padding: 10px;
+  top: -70px;
+  left: 0;
 }
 
 .form {
- padding: 5px 20px;
- width: 30vw;
-}
-.form fieldset {
- padding: 30px 5px;
+  padding: 5px 20px;
+  width: 30vw;
 }
 
-.river-information{
+.form fieldset {
+  padding: 30px 5px;
+}
+
+.river-information {
   border: 1px solid black;
   width: 50vw;
   height: 50vh;
   padding: 10px 20px;
 }
 
-/* .river-information button{
+.grocery {
+  border: 1px solid black;
+  width: 40vw;
+  padding: 20px 20px;
+  margin: 20px 0px;
+}
 
-} */
+.grocery h1 {
+  text-align: center;
+}
+
+.grocery form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grocery form input{
+  width: 30vw;
+  height: 5vh;
+  font-size: 20px;
+  padding: 0px 5px;
+}
+
+.display-bird-watcher{
+  border: 1px solid black;
+  width: 40vw;
+  padding: 20px;
+  margin: 20px;
+}

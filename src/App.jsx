@@ -21,6 +21,8 @@ import FileNamer from './Components/Validating_Components/FileNamer';
 import FetchData from './Components/UseEffectHook.jsx/FetchData';
 import Form from './Components/ReactForm/Form';
 import DisplayRiver from './Components/Loading_ Asynchronous_Data/DisplayRiver';
+import DisplayData from './Components/Local_Api/DisplayData';
+import DisplayBirdWatcher from './Components/BirdWatcher/DisplayBirdWatcher';
 
 export const ThemeContext = React.createContext();
 export const TextContext = createContext();
@@ -144,6 +146,8 @@ function App() {
         <FetchData />
         <Form />
         <DisplayRiver />
+        <DisplayData />
+        <DisplayBirdWatcher />
       </div>
     </>
   )
