@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import './App.css';
 import Instructions from './Components/Instructions';
 import FunctionCom from './Components/FunctionComp';
@@ -23,6 +24,9 @@ import Form from './Components/ReactForm/Form';
 import DisplayRiver from './Components/Loading_ Asynchronous_Data/DisplayRiver';
 import DisplayData from './Components/Local_Api/DisplayData';
 import DisplayBirdWatcher from './Components/BirdWatcher/DisplayBirdWatcher';
+import Manatee from './Components/React_Router/Manatee';
+import Narwhal from './Components/React_Router/Narwhal'
+import Whale from './Components/React_Router/Whale'
 
 export const ThemeContext = React.createContext();
 export const TextContext = createContext();
@@ -127,20 +131,20 @@ function App() {
           </ThemeProvider>
         </div>
         <TextContext.Provider value={text}>
-        <div className="wrapper">
-          <label htmlFor="text">
-            Add Your Text Here:
-            <textarea
-              id="text"
-              name="text"
-              rows="10"
-              cols="100"
-              onChange={e=> setText(e.target.value)}
-            >
-            </textarea>
-          </label>
-          <TextInformation />
-        </div>
+          <div className="wrapper">
+            <label htmlFor="text">
+              Add Your Text Here:
+              <textarea
+                id="text"
+                name="text"
+                rows="10"
+                cols="100"
+                onChange={e => setText(e.target.value)}
+              >
+              </textarea>
+            </label>
+            <TextInformation />
+          </div>
         </TextContext.Provider>
         <FileNamer />
         <FetchData />
@@ -148,6 +152,23 @@ function App() {
         <DisplayRiver />
         <DisplayData />
         <DisplayBirdWatcher />
+        <div className='nav' style={{border: '1px solid black', width: '30vw', height: '30vh', padding: '20px'}}>
+            <h1>Marine Mammals</h1>
+          <li><Link to='/manatee'>Manatee</Link></li>
+          <li><Link to='/narwhal'>Narwhal</Link></li>
+          <li><Link to='/whale'>Whale</Link></li>
+          <li><Link to='/whale/beluga'>Beluga Whale</Link></li>
+          <li><Link to='/whale/blue'>Blue Whale</Link></li>
+
+          <div className='router'>
+            <Routes>
+              <Route path='/manatee' element={<Manatee />} />
+              <Route path='/narwhal' element={<Narwhal />} />
+              <Route exact path='/whale' element={<Whale />} />
+              <Route path='/whale/:type' element={<Whale />} />
+            </Routes>
+          </div>
+        </div>
       </div>
     </>
   )

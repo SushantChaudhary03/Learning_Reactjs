@@ -16,13 +16,14 @@ function birds(state = defaultBirds, action) {
             return [
                 ...state,
                 {
-                    name: 'sushant',
+                    name: action.bird,
                     views: 1
                 }
             ];
 
         case INCREMENT_BIRD:
             const bird = state.find(b => action.bird === b.name);
+            if(!bird) return state;
             const birds = state.filter(b => action.bird !== b.name);
             return [
                 ...birds,
