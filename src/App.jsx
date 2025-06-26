@@ -27,6 +27,9 @@ import DisplayBirdWatcher from './Components/BirdWatcher/DisplayBirdWatcher';
 import Manatee from './Components/React_Router/Manatee';
 import Narwhal from './Components/React_Router/Narwhal'
 import Whale from './Components/React_Router/Whale'
+import Dashboard from './Components/Login_Page/Dashboard';
+import Preferences from './Components/Login_Page/Preferences';
+import DisplayLogin from './Components/Login_Page/DisplayLogin';
 
 export const ThemeContext = React.createContext();
 export const TextContext = createContext();
@@ -152,6 +155,7 @@ function App() {
         <DisplayRiver />
         <DisplayData />
         <DisplayBirdWatcher />
+        <DisplayLogin />
         <div className='nav' style={{border: '1px solid black', width: '30vw', height: '30vh', padding: '20px'}}>
             <h1>Marine Mammals</h1>
           <li><Link to='/manatee'>Manatee</Link></li>
@@ -166,6 +170,8 @@ function App() {
               <Route path='/narwhal' element={<Narwhal />} />
               <Route exact path='/whale' element={<Whale />} />
               <Route path='/whale/:type' element={<Whale />} />
+              <Route path='/dashboard' element={<Dashboard/>} />
+              <Route path='/preferences' element={<Preferences/>} />
             </Routes>
           </div>
         </div>

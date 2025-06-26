@@ -269,3 +269,9 @@ button {
   padding: 20px;
   margin: 20px;
 }
+
+.login {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
