@@ -30,6 +30,7 @@ import Whale from './Components/React_Router/Whale'
 import Dashboard from './Components/Login_Page/Dashboard';
 import Preferences from './Components/Login_Page/Preferences';
 import DisplayLogin from './Components/Login_Page/DisplayLogin';
+import DisplayTextAnalyzer from './Components/Text_Analyzer/DisplayTextAnalyzer';
 
 export const ThemeContext = React.createContext();
 export const TextContext = createContext();
@@ -156,6 +157,7 @@ function App() {
         <DisplayData />
         <DisplayBirdWatcher />
         <DisplayLogin />
+        <DisplayTextAnalyzer />
         <div className='nav' style={{border: '1px solid black', width: '30vw', height: '30vh', padding: '20px'}}>
             <h1>Marine Mammals</h1>
           <li><Link to='/manatee'>Manatee</Link></li>
